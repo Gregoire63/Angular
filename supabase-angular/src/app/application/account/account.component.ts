@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core'
 import { FormBuilder } from '@angular/forms'
 import { AuthSession } from '@supabase/supabase-js'
-import { Profile, SupabaseService } from '../supabase.service'
+import { Profile, SupabaseService } from '../../services/supabase.service'
 
 @Component({
   selector: 'app-account',
@@ -11,7 +11,7 @@ import { Profile, SupabaseService } from '../supabase.service'
 export class AccountComponent implements OnInit {
   loading = false
   profile!: Profile
-
+  accountOpen = false
   @Input()
   session!: AuthSession
 
@@ -24,6 +24,10 @@ export class AccountComponent implements OnInit {
       avatar_url: event,
     })
     await this.updateProfile()
+  }
+
+  accountClick(){
+    this.accountOpen = !this.accountOpen
   }
 
   updateProfileForm = this.formBuilder.group({

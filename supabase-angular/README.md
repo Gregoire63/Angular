@@ -1,5 +1,20 @@
 # SupabaseAngular
 
+## Rendu TP
+Cote fonctionnalités du framework Angular, vous devez utiliser:
+
+- [x] Les composants
+- [x] Les services
+- [x] Les routes
+- [x] Les guards
+- [x] Les pipes
+- [x] Les directives
+- [x] Les observables
+- [x] Les tests unitaires
+- [x] Les tests end-to-end
+- [x] Les intercepteurs (optionnel)
+- [x] Le module HttpClient (optionnel)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.0.
 
 ## Development server

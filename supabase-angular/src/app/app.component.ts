@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core'
-import { SupabaseService } from './supabase.service'
+import { SupabaseService } from './services/supabase.service'
 
 @Component({
   selector: 'app-root',
@@ -15,5 +15,6 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.supabase.authChanges((_, session) => (this.session = session))
+    console.log(this.session )
   }
 }

@@ -1,0 +1,25 @@
+.account{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    width: 35px;
+    transition: .5s;
+}
+.scrollActive{
+    right: 20px;
+}
+.account:hover{
+    transform: rotate(45deg);
+}
+.profileEdited{
+    position: fixed;
+    width: 500px;
+    height: 100vh;
+    padding: 5px;
+    top: 0;
+    right: 0;
+    border: 2px solid grey;
+    background-color: rgb(169, 172, 175);
+    border-radius: 5px;
+}

@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core'
 import { SafeResourceUrl, DomSanitizer } from '@angular/platform-browser'
-import { SupabaseService } from '../supabase.service'
+import { SupabaseService } from '../../services/supabase.service'
 
 @Component({
   selector: 'app-avatar',

@@ -1,0 +1,20 @@
+<div class="checklist">
+    <section class="example-section" [formGroup]="listItemsForm">
+      <h4>Check Liste</h4>
+      <div *ngFor="let item of defaultItems">
+        <p [formGroupName]="item.name">
+          <mat-checkbox  [color]="'#FFF'" formControlName="checked">{{ item.name }}</mat-checkbox>
+          <span appUpdatedAt>{{item.updated_at | customDatePipe: 28: 'dd-MM-yyyy'}}</span>
+        </p>
+      </div>
+    </section>
+    <div class="add-check">
+      <input type="text" [(ngModel)]="newCheckName" placeholder="Nouveau check">
+      <button (click)="addCheck()" style="margin-inline: 10px;">Ajouter</button>
+    </div>    
+    <!-- <section class="example-section">
+      <h4>You chose:</h4>
+      {{ listItemsForm.value | json }}
+    </section> -->
+  </div>
+  

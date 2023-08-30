@@ -15,6 +15,13 @@ export interface Profile {
   website: string
   avatar_url: string
 }
+export interface Check {
+  id?: string
+  name: string
+  checked: boolean
+  updated_at? : Date
+  created_at?: Date
+}
 
 @Injectable({
   providedIn: 'root',
@@ -69,5 +76,22 @@ export class SupabaseService {
 
   uploadAvatar(filePath: string, file: File) {
     return this.supabase.storage.from('avatars').upload(filePath, file)
+  }
+
+  // CheckList
+  async getItems(): Promise<{ name: string, checked: boolean, updated_at: Date }[]> {
+    const { data:checklist, error } = await this.supabase.from('checklist').select('id, name, checked, updated_at, created_at').order('created_at', {ascending: true});
+    if (error) {
+      throw error;
+    }
+    return checklist;
+  }
+  updateCheckList(check: Check) {
+    const update = {
+      ...check,
+      updated_at: new Date(),
+    }
+
+    return this.supabase.from('checklist').upsert(update)
   }
 }

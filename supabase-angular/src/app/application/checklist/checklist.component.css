@@ -1,0 +1,13 @@
+.checklist{
+    color: black;
+    padding: 10px;
+    background-color: rgb(79, 77, 77);
+    border-radius: 5px;
+}
+.example-section {
+    margin: 12px 0;
+}
+.add-check{
+    display: flex;
+    flex-direction: row;
+}
